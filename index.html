@@ -1,43 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="game.css">
     <title>Slap Game</title>
 </head>
+
 <body>
     <div class="container-fluid">
-        <h1><center>Blow up the Death Star</center></h1>
-    <div class="row d-flex justify-content-center">
-        <img src="assets/Death Star" alt="">
-    </div>
+        <h1>
+            <center>Blow up the Death Star</center>
+        </h1>
         <div class="row d-flex justify-content-center">
-        <div class="col-6 d-flex justify-content-left">
-            <h4>Health</h4>
-            <div class="col-6 d-flex justify-content-right"></div>
-            <h4>Hits</h4>
+            <img src="assets/Death Star" alt="">
         </div>
-    </div>
-    <footer>
-        <div class="row2 d-flex justify-content-center">
-            <div class="col-6">
-                <h1>Weapon Choice</h1>
-                    <button onclick="slap()" type="button" class="btn btn-primary btn-lg">Laser</button>
-                    <button onclick="slap2()"type="button" class="btn btn-primary btn-lg">Canon</button>
-                    <button onclick="slap3()"type="button" class="btn btn-primary btn-lg">Photon Torpedo</button>
+        <div class="row d-flex justify-content-center">
+            <div class="col d-flex justify-content-around">
+                <h3>
+                    <span>Name:
+                        <span id="name"></span>
+                    </span>
+                </h3>
+                <h3>
+                    <span>Health:
+                        <span id="health"></span>
+                    </span>
+                </h3>
+                <h3>
+                    <span>Hits:
+                        <span id="hits"></span>
+                    </span>
+                </h3>
             </div>
-            <div class="col-6">
+        </div>
+        <footer>
+            <div class="row2 d-flex justify-content-center">
+                <div class="col-6">
+                    <h1>Weapon Choice</h1>
+                    <button onclick="slap()" type="button" class="btn btn-primary btn-lg">Laser</button>
+                    <button onclick="slap2()" type="button" class="btn btn-primary btn-lg">Canon</button>
+                    <button onclick="slap3()" type="button" class="btn btn-primary btn-lg">Photon Torpedo</button>
+                </div>
+                <div class="col-6">
                     <h1>Defensive Options</h1>
                     <button type="button" class="btn btn-secondary btn-lg">Tie Fighters</button>
                     <button type="button" class="btn btn-secondary btn-lg">Star Destroyer</button>
                     <button type="button" class="btn btn-secondary btn-lg">Shield</button>
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
     </div>
     <script src="game.js"></script>
 </body>
+
 </html>
