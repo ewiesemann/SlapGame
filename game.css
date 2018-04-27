@@ -1,0 +1,7 @@
+.death {
+    background-image: url(assets/Death Star);
+    background-size: cover;
+    min-height: 75vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
