@@ -61,7 +61,7 @@ function Defense(avoid){
     this.avoid = avoid
 }
 
-var avoid = function(tiefighter, stardestroyer, shield){
+function Avoid (tiefighter, stardestroyer, shield){
     this.tiefighter = tiefighter;
     this.stardestroyer = stardestroyer;
     this.shield = shield;
@@ -93,14 +93,14 @@ function defense(shield){
 
 
 
-var laser = new Attack(-1)
-var canon = new Attack(-5)
-var Photon = new Attack(-10)
+//var laser = new Attack(-1)
+//var canon = new Attack(-5)
+//var Photon = new Attack(-10)
 
 
 function update(){
 
-    document.getElementById("health").innerText=`${this.health}`;
+    document.getElementById("health").innerText=`${player2}`;
     document.getElementById("name").innerText=`${this.name}`;
     document.getElementById("hits").innerText=`${this.hits}`;
     
