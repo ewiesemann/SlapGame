@@ -1,28 +1,34 @@
 
+    // This ection is for the Enemy creation
+    
     var enemy = new Enemy(100, "Death Star")
 
-    // This is the opponent 
     function Enemy(health, name) {
         this.health = health;
         this.name = name;
         this.hits = 0;
+        this.equip=[];
     
     };
+
+    //This section is for Items
     
-/** 
-    function item(name, modifier, description) {
-        this.itemname = name;
-        this.itemmod = modifier;
-        this.itemdescript = description;
+
+    function Item(name, modifier, description) {
+        this.name = name;
+        this.mod = modifier;
+        this.descript = description;
      };
-     */
+    
      
-     var item = {
-         tiefighter: new item("Tie Fighters", 0.3, "Short range fighter to distract you"),
-         stardestroyer: new item ("Star Destroyer", 1.5, "Heavy warship"),
-         shield: new item ("Shield", 3, "Photon Torpedo for max damage"),
+     var items = {
+         tiefighter: new Item("Tie Fighters", 0.3, "Short range fighter to distract you"),
+         stardestroyer: new Item ("Star Destroyer", 1.5, "Heavy warship"),
+         shield: new Item ("Shield", 3, "Photon Torpedo for max damage"),
          
         };
+
+        //This is for slapping (damage to enemy)
 
     function slap(){
         enemy.health -= 1;
@@ -42,14 +48,28 @@
         update();
     };
 
-    
+    //This is my to update the current in game values
     function update(){
-    
         document.getElementById("health").innerText = `${enemy.health}`
         document.getElementById("name").innerText=`${enemy.name}`;
         document.getElementById("hits").innerText=`${enemy.hits}`;
     };
+        
     
+
+function giveShield(){
+    enemy.equip.push(items.shield);
+    update();
+}
+/**    
+function addMods() {
+    for (let i = 0; i < enemy.items.length; i++) {
+        const element = addMods[i];
+        
+    }
+}
+*/
+
     update();
     
     
