@@ -17,16 +17,18 @@ function player2(Deathstar){
     this.hits = 1;
 };
 
+
 function Attack(ammo){
     this.ammo = ammo
 }
 
-var ammo = (laser, canon, photon){
+function Ammo (laser, canon, photon){
     this.laser = laser;
     this.canon = canon;
     this.photon = photon;
-}
+};
 
+/** 
 function attack(laser){
     Deathstar.health -= 1;
     Deathstar.hits +1
@@ -44,17 +46,18 @@ function attack(photon){
     Deathstar.hits +1
     update()
 }
+*/
 
 var items = {
-    laser: new items("Laser"),
-    canon: new items ("Canon"),
-    photon: new items ("Photon"),
+    laser: new items("Laser", -1, "This is a laser"),
+    canon: new items ("Canon", -5, "This is a canon"),
+    photon: new items ("Photon", -10, "This is a photon torpedo"),
     tiefighter: new items ("Tie Fighter"),
     stardestroyer:new items ("Star Destroyer"),
     shield: new items ("Shield"),
 }
 
-function defense(avoid){
+function Defense(avoid){
     this.avoid = avoid
 }
 
