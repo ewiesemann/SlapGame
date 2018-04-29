@@ -2,13 +2,14 @@
 //var health = 100
 //var hits = 0
 
-var xwing = new Player("Xwing")
+//var xwing = new player("Xwing")
+var Deathstar = new player2("Deathstar")
 
-function player(Xwing){
-    this.Xwing = Xwing;
-    this.health = 100;
-    this.hits = 0;
-};
+//function player(Xwing){
+//    this.Xwing = Xwing;
+//    this.health = 100;
+//    this.hits = 0;
+//};
 
 function player2(Deathstar){
     this.Deathstar = Deathstar;
@@ -16,11 +17,11 @@ function player2(Deathstar){
     this.hits = 1;
 };
 
-function Attack(dmg){
-    this.dmg = dmg
+function Attack(ammo){
+    this.ammo = ammo
 }
 
-var attack = function(laser, canon, photon){
+var ammo = (laser, canon, photon){
     this.laser = laser;
     this.canon = canon;
     this.photon = photon;
@@ -53,11 +54,11 @@ var items = {
     shield: new item ("Shield"),
 }
 
-function defense(avoid){
+function defense=(avoid){
     this.avoid = avoid
 }
 
-var defense = function(tiefighter, stardestroyer, shield){
+var avoid = function(tiefighter, stardestroyer, shield){
     this.tiefighter = tiefighter;
     this.stardestroyer = stardestroyer;
     this.shield = shield;
@@ -96,9 +97,9 @@ var Photon = new Attack(-10)
 
 function update(){
 
-    document.getElementById("health").innerText=`${health}`;
-    document.getElementById("name").innerText=`${name}`;
-    document.getElementById("hits").innerText=`${hits}`;
+    document.getElementById("health").innerText=`${this.health}`;
+    document.getElementById("name").innerText=`${this.name}`;
+    document.getElementById("hits").innerText=`${this.hits}`;
     
 }
 
