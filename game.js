@@ -1,41 +1,85 @@
-//var name = "Death-Star"
-//var health = 100
-//var hits = 0
 
-//var xwing = new player("Xwing")
-var Deathstar = new player2("Deathstar")
+    var enemy = new Enemy(100, "Death Star")
 
-//function player(Xwing){
-//    this.Xwing = Xwing;
-//    this.health = 100;
-//    this.hits = 0;
-//};
-
-function player2(Deathstar){
-    this.Deathstar = Deathstar;
-    this.health = 100;
-    this.hits = 1;
-};
-
-
-function Attack(ammo){
-    this.ammo = ammo
-}
-
-function Ammo (laser, canon, photon){
-    this.laser = laser;
-    this.canon = canon;
-    this.photon = photon;
-};
-
+    // This is the opponent 
+    function Enemy(health, name) {
+        this.health = health;
+        this.name = name;
+        this.hits = 0;
+    
+    };
+    
 /** 
-function attack(laser){
-    Deathstar.health -= 1;
-    Deathstar.hits +1
-    update()
-}
+    function item(name, modifier, description) {
+        this.itemname = name;
+        this.itemmod = modifier;
+        this.itemdescript = description;
+     };
+     */
+     
+     var item = {
+         tiefighter: new item("Tie Fighters", 0.3, "Short range fighter to distract you"),
+         stardestroyer: new item ("Star Destroyer", 1.5, "Heavy warship"),
+         shield: new item ("Shield", 3, "Photon Torpedo for max damage"),
+         
+        };
 
-function attack(canon){
+    function slap(){
+        enemy.health -= 1;
+        enemy.hits += 1;
+        update();
+    };
+    
+    function slap2(){
+        enemy.health -= 5;
+        enemy.hits += 1;
+        update();
+    };
+    
+    function slap3(){
+        enemy.health -= 10;
+        enemy.hits += 1;
+        update();
+    };
+
+    
+    function update(){
+    
+        document.getElementById("health").innerText = `${enemy.health}`
+        document.getElementById("name").innerText=`${enemy.name}`;
+        document.getElementById("hits").innerText=`${enemy.hits}`;
+    };
+    
+    update();
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //var name = "Death-Star"
+    //var health = 100
+    //var hits = 0
+    
+    //var xwing = new player("Xwing")
+    
+    //function player(Xwing){
+        //    this.Xwing = Xwing;
+        //    this.health = 100;
+        //    this.hits = 0;
+        //};
+    /** 
+     function attack(laser){
+         Deathstar.health -= 1;
+         Deathstar.hits +1
+         update()
+        }
+        
+        function attack(canon){
     Deathstar.health -= 5;
     Deathstar.hits +1
     update()
@@ -48,90 +92,16 @@ function attack(photon){
 }
 */
 
-var items = {
-    laser: new items("Laser", -1, "This is a laser"),
-    canon: new items ("Canon", -5, "This is a canon"),
-    photon: new items ("Photon", -10, "This is a photon torpedo"),
-    tiefighter: new items ("Tie Fighter"),
-    stardestroyer:new items ("Star Destroyer"),
-    shield: new items ("Shield"),
-}
-
-function Defense(avoid){
-    this.avoid = avoid
-}
-
-function Avoid (tiefighter, stardestroyer, shield){
-    this.tiefighter = tiefighter;
-    this.stardestroyer = stardestroyer;
-    this.shield = shield;
-}
-
-
-
-function defense(tiefighter){
-    Deathstar.health += 1;
-    Deathstar.hits += 1;
-    update();
-}
-
-
-
-function defense(stardestroyer){
-    Deathstar.health += 2;
-    Deathstar.hits += 2;
-    update();
-}
-
-
-
-function defense(shield){
-    Deathstar.health += 3;
-    Deathstar.hits += 3;
-    update();
-}
-
-
 
 //var laser = new Attack(-1)
 //var canon = new Attack(-5)
 //var Photon = new Attack(-10)
 
 
-function update(){
-
-    document.getElementById("health").innerText=`${player2}`;
-    document.getElementById("name").innerText=`${this.name}`;
-    document.getElementById("hits").innerText=`${this.hits}`;
-    
-}
 
 
 
 
-
-update();
-
-
-
-
-//function slap(){
-//    health -= 1;
-//    hits += 1;
-//    update();
-//}
-
-//function slap2(){
-//    health -= 5;
-//    hits += 1;
-//    update();
-//}
-
-//function slap3(){
-//    health -= 10;
-//    hits += 1;
-//    update();
-//}
 
 
 // var me = {
