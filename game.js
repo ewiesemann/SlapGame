@@ -46,15 +46,15 @@ function attack(photon){
 }
 
 var items = {
-    laser: new item("Laser"),
-    canon: new item ("Canon"),
-    photon: new item ("Photon"),
-    tiefighter: new item ("Tie Fighter"),
-    stardestroyer:new item ("Star Destroyer"),
-    shield: new item ("Shield"),
+    laser: new items("Laser"),
+    canon: new items ("Canon"),
+    photon: new items ("Photon"),
+    tiefighter: new items ("Tie Fighter"),
+    stardestroyer:new items ("Star Destroyer"),
+    shield: new items ("Shield"),
 }
 
-function defense=(avoid){
+function defense(avoid){
     this.avoid = avoid
 }
 
