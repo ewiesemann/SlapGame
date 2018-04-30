@@ -1,5 +1,5 @@
 
-    // This ection is for the Enemy creation
+ // This ection is for the Enemy creation
     
     var enemy = new Enemy(100, "Death Star")
 
@@ -7,11 +7,12 @@
         this.health = health;
         this.name = name;
         this.hits = 0;
-        this.equip=[];
+        this.equip = [];
+        
     
     };
 
-    //This section is for Items
+//This section is for Items
     
 
     function Item(name, modifier, description) {
@@ -22,13 +23,13 @@
     
      
      var items = {
-         tiefighter: new Item("Tie Fighters", 0.3, "Short range fighter to distract you"),
+         tiefighter: new Item("Tie Fighters", 0.3, "Short range fighter"),
          stardestroyer: new Item ("Star Destroyer", 1.5, "Heavy warship"),
-         shield: new Item ("Shield", 3, "Photon Torpedo for max damage"),
+         shield: new Item ("Shield", 5, "Whole base damage reduction"),
          
         };
 
-        //This is for slapping (damage to enemy)
+//This is for slapping (damage to enemy)
 
     function slap(){
         enemy.health -= 1;
@@ -48,9 +49,9 @@
         update();
     };
 
-    //This is my to update the current in game values
+//This is to update the current in game values
     function update(){
-        document.getElementById("health").innerText = `${enemy.health}`
+        document.getElementById("health").innerText =`${enemy.health}`
         document.getElementById("name").innerText=`${enemy.name}`;
         document.getElementById("hits").innerText=`${enemy.hits}`;
     };
@@ -61,14 +62,23 @@ function giveShield(){
     enemy.equip.push(items.shield);
     update();
 }
-/**    
+
+function giveTie(){
+    enemy.equip.push(items.tiefighter);
+    update();
+}
+
+function giveDestroyer(){
+    enemy.equip.push(items.stardestroyer);
+    update();
+}
+
 function addMods() {
-    for (let i = 0; i < enemy.items.length; i++) {
-        const element = addMods[i];
-        
+    for (let i = 0; i < enemy.equip.length; i++) {
+        let mod = enemy.equip[i];
     }
 }
-*/
+
 
     update();
     
