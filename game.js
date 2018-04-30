@@ -29,6 +29,32 @@ var items = {
 
 };
 
+//This section is for the damage reduction modifiers
+function giveShield() {
+    enemy.equip.push(items.shield.mod);
+    dmgReduce();
+    update();
+}
+
+function giveTie() {
+    enemy.equip.push(items.tiefighter.mod);
+    dmgReduce();
+    update();
+}
+
+function giveDestroyer() {
+    enemy.equip.push(items.stardestroyer.mod);
+    dmgReduce();
+    update();
+}
+function dmgReduce() {
+    var count = 0;
+    for (var i in enemy.equip) {
+        count += enemy.equip[i];
+    };
+    enemy.modCount += count;
+    enemy.equip = [];
+}
 //This is for slapping (damage to enemy)
 
 function slap() {
@@ -67,35 +93,6 @@ function update() {
     document.getElementById("name").innerText = `${enemy.name}`;
     document.getElementById("hits").innerText = `${enemy.hits}`;
 };
-
-
-//This section is for the damage reduction modifiers
-function giveShield() {
-    enemy.equip.push(items.shield.mod);
-    dmgReduce();
-    update();
-}
-
-function giveTie() {
-    enemy.equip.push(items.tiefighter.mod);
-    dmgReduce();
-    update();
-}
-
-function giveDestroyer() {
-    enemy.equip.push(items.stardestroyer.mod);
-    dmgReduce();
-    update();
-}
-
-function dmgReduce() {
-    var count = 0;
-    for (var i in enemy.equip) {
-        count += enemy.equip[i];
-    };
-    enemy.modCount += count;
-    enemy.equip = [];
-}
 
 update();
 
