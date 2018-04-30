@@ -63,6 +63,9 @@ function slap() {
         enemy.health -= newHit;
     };
     enemy.modCount -= 1;
+    if(enemy.modCount < 0){
+        enemy.modCount =0
+    }
     enemy.hits += 1;
     update();
 };
@@ -73,6 +76,9 @@ function slap2() {
         enemy.health -= newHit;
     };
     enemy.modCount -= 5;
+    if(enemy.modCount < 0){
+        enemy.modCount =0
+    }
     enemy.hits += 1;
     update();
 };
@@ -83,6 +89,9 @@ function slap3() {
         enemy.health -= newHit;
     };
     enemy.modCount -= 10;
+    if(enemy.modCount < 0){
+        enemy.modCount =0
+    }
     enemy.hits += 1;
     update();
 };
