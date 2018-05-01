@@ -30,6 +30,8 @@ var items = {
 };
 
 //This section is for the damage reduction modifiers
+
+//How could you combine these three into one function using [] notation? hint: function giveItem(type) { var item = items[type].mod }
 function giveShield() {
     enemy.equip.push(items.shield.mod);
     dmgReduce();
@@ -47,6 +49,7 @@ function giveDestroyer() {
     dmgReduce();
     update();
 }
+//you empty the array as soon as you add a new item to it, maybe a better way to do this process, either just add the item to modCount from the start, or perhaps leave them in the array and do this portion every attack
 function dmgReduce() {
     var count = 0;
     for (var i in enemy.equip) {
@@ -57,6 +60,7 @@ function dmgReduce() {
 }
 //This is for slapping (damage to enemy)
 
+//similar to above how could these become one function? attack(type)
 function slap() {
     if (enemy.modCount < 10) {
         var newHit = 1 - enemy.modCount;
